@@ -1,12 +1,60 @@
-# React + Vite
+# 🎬 Movie Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive movie browsing app built with **React + Tailwind CSS**, powered by the **OMDb API**.  
+Users can search, browse by categories, apply filters, and explore movies with infinite scrolling.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🔥 **Initial Render** – Loads default movies (Now Playing = Avengers)
+- 🎭 **Movie Categories** – Quick filters: Now Playing, Popular, Top Rated, Upcoming
+- 🔍 **Search Movies** – Debounced search (500ms delay to avoid excessive API calls)
+- ♾️ **Infinite Scrolling** – Loads more movies when you scroll to the bottom
+- 🎛 **Custom Filters** – Filter by **Year** & **Genre** using a custom `MyFilter` function (not `.filter()`)
+- ⏳ **Loading & Error States** – User-friendly messages for loading, errors, and no results
+- 📱 **Responsive UI** – Works beautifully on mobile & desktop with Tailwind CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React + Vite
+- **Styling:** Tailwind CSS
+- **API:** [OMDb API](https://www.omdbapi.com/)
+- **Utilities:** Custom hooks (`useDebounce`), Infinite scroll with throttling
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/movie-explorer.git
+cd movie-explorer
+```
+
+`npm install`
+`VITE_OMDB_API_KEY=your_api_key_here`
+`npm run dev`
+
+## Project Structure
+
+```
+src/
+ ├── components/
+ │    ├── MovieCard.jsx      # Displays movie poster, title, year
+ │    ├── SearchBar.jsx      # Search input with debounce
+ │    └── Filters.jsx        # Year & Genre filter
+ ├── hooks/
+ │    └── useDebounce.js     # Debounce hook
+ ├── pages/
+ │    └── Home.jsx           # Main page with movie grid
+ ├── App.jsx
+ ├── main.jsx
+ └── index.css               # Tailwind setup
+```
+
+**Home Page**  
+![Home](./public/home.png)
